@@ -45,7 +45,7 @@ jobs:
       - run:
           name: publishhpact
           command: |
-            PACT_CLI="pact broker publish ./pacts --auto-detect-version-properties"
+            PACT_CLI="pact broker publish ./tmp/pacts --auto-detect-version-properties"
             ${PACT_CLI}
 
 
