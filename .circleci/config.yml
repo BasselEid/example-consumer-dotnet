@@ -29,6 +29,10 @@ jobs:
     executor: pactfoundation
     steps:
       - run:
+          name: List files and folders in current directory
+          command: |
+            ls -l
+      - run:
           name: publishhpact
           command: |
             PACT_CLI="pact broker publish --auto-detect-version-properties"
