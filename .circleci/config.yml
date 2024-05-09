@@ -24,6 +24,10 @@ jobs:
           name: Test
           command: |
             dotnet test tests
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - "*"
 
   pactflow:
     executor: pactfoundation
