@@ -29,13 +29,15 @@ jobs:
           command: |
             ls -l
       - persist_to_workspace:
-          root: ./
+          root: /pacts
           paths:
-            - "*"
+            - "/pacts"
 
   pactflow:
     executor: pactfoundation
     steps:
+      - attach_workspace:
+          at: /pacts
       - run:
           name: List files and folders in current directory
           command: |
