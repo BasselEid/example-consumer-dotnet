@@ -29,7 +29,7 @@ jobs:
           command: |
             ls -l
       - persist_to_workspace:
-          root: /pacts
+          root: ./pacts
           paths:
             - "/pacts"
 
@@ -37,7 +37,7 @@ jobs:
     executor: pactfoundation
     steps:
       - attach_workspace:
-          at: /pacts
+          at: ./pacts
       - run:
           name: List files and folders in current directory
           command: |
