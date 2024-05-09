@@ -24,6 +24,10 @@ jobs:
           name: Test
           command: |
             dotnet test tests
+      - run:
+          name: List files and folders in current directory
+          command: |
+            ls -l
       - persist_to_workspace:
           root: ./
           paths:
