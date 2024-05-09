@@ -29,9 +29,9 @@ jobs:
           command: |
             ls -l
       - persist_to_workspace:
-          root: /tmp
+          root: ./
           paths:
-            - "workspace"
+            - "pacts"
 
   pactflow:
     executor: pactfoundation
