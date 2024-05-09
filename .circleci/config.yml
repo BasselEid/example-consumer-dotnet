@@ -41,7 +41,7 @@ jobs:
       - run:
           name: List files and folders in current directory
           command: |
-            ls ./pacts
+            ls ./pacts/pacts
       - run:
           name: publishhpact
           command: |
