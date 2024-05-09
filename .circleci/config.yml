@@ -37,11 +37,11 @@ jobs:
     executor: pactfoundation
     steps:
       - attach_workspace:
-          at: ./pacts
+          at: ./tmp
       - run:
           name: List files and folders in current directory
           command: |
-            ls ./pacts/pacts
+            ls ./tmp/pacts
       - run:
           name: publishhpact
           command: |
