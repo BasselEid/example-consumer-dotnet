@@ -31,7 +31,7 @@ jobs:
       - run:
           name: publishhpact
           command: |
-            PACT_CLI="pact broker publish --auto-detect-version-properties --to-environment production"
+            PACT_CLI="pact broker publish --auto-detect-version-properties"
             ${PACT_CLI}
 
 
