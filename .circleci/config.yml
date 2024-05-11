@@ -54,7 +54,7 @@ jobs:
       - run:
           name: canideploy
           command: |
-            PACT_CLI="pact broker publish ./tmp/pacts --auto-detect-version-properties"
+            PACT_CLI="pact broker can-i-deploy --pacticipant pactflow-example-consumer-dotnet --version ${CIRCLE_SHA1} --to-environment production"
             ${PACT_CLI}
 
 workflows:

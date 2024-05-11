@@ -37,7 +37,7 @@ namespace tests
                 LogLevel = PactLogLevel.Debug
             };
 
-            pact = Pact.V3("pactflow-example-consumer-dotnet", "pactflow-example-provider", Config).WithHttpInteractions();
+            pact = Pact.V3("pactflow-example-consumer-dotnet", "pactflow-example-provider-dotnet", Config).WithHttpInteractions();
         }
 
         [Fact]
