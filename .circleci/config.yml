@@ -33,7 +33,7 @@ jobs:
           paths:
             - "pacts"
 
-  pactflow:
+  pact-publish:
     executor: pactfoundation
     steps:
       - attach_workspace:
@@ -43,7 +43,16 @@ jobs:
           command: |
             ls ./tmp/pacts
       - run:
-          name: publishhpact
+          name: publish
+          command: |
+            PACT_CLI="pact broker publish ./tmp/pacts --auto-detect-version-properties"
+            ${PACT_CLI}
+
+  pact-can-i-deploy:
+    executor: pactfoundation
+    steps:
+      - run:
+          name: canideploy
           command: |
             PACT_CLI="pact broker publish ./tmp/pacts --auto-detect-version-properties"
             ${PACT_CLI}
@@ -53,7 +62,11 @@ workflows:
     jobs:
       - test:
           name: tests
-      - pactflow:
-          name: publishhpact
+      - pact-publish:
+          name: publish-pact
           requires:
             - tests
+      - pact-can-i-deploy:
+          name: pact-can-i-deploy
+          requires:
+            - publish-pact

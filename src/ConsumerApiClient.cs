@@ -11,6 +11,7 @@ namespace Consumer
         public string id;
         public string type;
         public string name;
+        public string category;
     }
 
     public class ProductClient
