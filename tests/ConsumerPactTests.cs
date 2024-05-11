@@ -24,6 +24,7 @@ namespace tests
 
         public ConsumerPactTests(ITestOutputHelper output)
         {
+            
             products = new List<object>()
             {
                 new { id = "27", name = "burger", type = "food", category = "cat1" }
