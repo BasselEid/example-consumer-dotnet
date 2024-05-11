@@ -26,7 +26,7 @@ namespace tests
         {
             products = new List<object>()
             {
-                new { id = "27", name = "burger", type = "food"//, category = "cat1" 
+                new { id = "27", name = "burger", type = "food", category = "cat1" 
                 }
             };
 
@@ -63,7 +63,7 @@ namespace tests
                 Assert.Equal("27",result[0].id);
                 Assert.Equal("burger",result[0].name);
                 Assert.Equal("food",result[0].type);
-                // Assert.Equal("cat1",result[0].category);
+                Assert.Equal("cat1",result[0].category);
             });
         }
     }
